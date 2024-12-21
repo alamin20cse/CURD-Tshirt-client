@@ -9,6 +9,7 @@ import {
 import HomeMain from './HomeMain';
 import Home from './Home';
 import AddTshirt from './AddTshirt';
+import Updatetshirt from './assets/Updatetshirt';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
       {
         path:'/addtshirt',
         element:<AddTshirt></AddTshirt>
+      },
+      {
+        path:'/updatetshirt/:id',
+        element:<Updatetshirt></Updatetshirt>,
+        loader:({params})=>fetch(`http://localhost:4000/tshirts/${params.id}`)
       }
     ]
   },

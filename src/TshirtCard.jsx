@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TshirtCard = ({tshirt}) => {
 
@@ -30,6 +31,8 @@ const TshirtCard = ({tshirt}) => {
     <p>Category:{category}</p>
     <div className="card-actions justify-end">
       <button onClick={()=>handleDelet(_id)} className="btn btn-primary">Delete</button>
+     
+     <Link to={`/updatetshirt/${_id}`}> <button className='btn btn-primary'>Update</button></Link>
     </div>
   </div>
 </div>
